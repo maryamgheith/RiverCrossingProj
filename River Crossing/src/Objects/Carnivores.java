@@ -1,5 +1,9 @@
 package Objects;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import controller.*;
 
@@ -19,8 +23,39 @@ public abstract class  Carnivores implements ICrosser {
 	}
 
 	public BufferedImage[] getImages() {
-		// TODO Auto-generated method stub
-		return null;
+		int x =4;
+		BufferedImage[] bimg= new BufferedImage[x];
+		bimg[0]=null;
+		try {
+			bimg[0]=ImageIO.read(new File("wolf.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+		bimg[1]=null;
+		try {
+			bimg[1]=ImageIO.read(new File("wolf.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		bimg[2]=null;
+		try {
+			bimg[2]=ImageIO.read(new File("wolf.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		bimg[3]=null;
+		try {
+			bimg[3]=ImageIO.read(new File("wolf.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			return bimg;
+	
 	}
 
 	public ICrosser makeCopy() {
