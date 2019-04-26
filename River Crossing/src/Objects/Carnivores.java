@@ -1,76 +1,38 @@
 package Objects;
+
+import controller.ICrosser;
+
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
+public abstract class Carnivores implements ICrosser {
+    @Override
+    public boolean canSail() {
+        return false;
+    }
 
-import controller.*;
+    @Override
+    public double getWeight() {
+        return 0;
+    }
 
-public abstract class  Carnivores implements ICrosser {
+    @Override
+    public int getEatingRank() {
+        return 4;
+    }
 
-	public boolean canSail() {
-		return false;
-	}
+    @Override
+    public abstract BufferedImage[] getImages();
 
-	public int getEatingRank() {
-		return 4;
-	}
+    @Override
+    public abstract ICrosser makeCopy();
 
-	public double getWeight() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    @Override
+    public void setLabelToBeShown(String label) {
 
-	public BufferedImage[] getImages() {
-		int x =4;
-		BufferedImage[] bimg= new BufferedImage[x];
-		bimg[0]=null;
-		try {
-			bimg[0]=ImageIO.read(new File("wolf.png"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-			
-		bimg[1]=null;
-		try {
-			bimg[1]=ImageIO.read(new File("wolf.png"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		bimg[2]=null;
-		try {
-			bimg[2]=ImageIO.read(new File("wolf.png"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		bimg[3]=null;
-		try {
-			bimg[3]=ImageIO.read(new File("wolf.png"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-			return bimg;
-	
-	}
+    }
 
-	public ICrosser makeCopy() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void setLabelToBeShown(String label) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public String getLabelToBeShown() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+    @Override
+    public String getLabelToBeShown() {
+        return null;
+    }
 }

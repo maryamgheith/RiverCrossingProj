@@ -1,25 +1,57 @@
 package Objects;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 import controller.*;
 
-public class Plant implements ICrosser {
+import javax.imageio.ImageIO;
 
-	public boolean canSail() {
+public class Plant implements ICrosser {
+	double x;
+	double y;
+	public double getX() {
+		return x;
+	}
+
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public void setY(double y) {
+		this.y = y;
+	}
+
+	public boolean canSail()
+	{
 		return false;
 	}
 
-	public double getWeight() {
+	public double getWeight()
+	{
 		return 0;
 	}
 
-	public int getEatingRank() {
+	public int getEatingRank()
+	{
 		return 2;
 	}
 
-	public BufferedImage[] getImages() {
-		return null;
+	public BufferedImage[] getImages()
+	{
+		BufferedImage[] images = new BufferedImage[1];
+		images[0] = null;
+		try {
+			images[0] = ImageIO.read(new File("C://Users//Maryam Gheith//Downloads//RiverCrossingProj-master//River Crossing//src//GUI//plant.png"));
+		} catch (IOException ex) {
+			System.out.println("Image failed to load.");
+		}
+		return images;
 	}
 
 	public ICrosser makeCopy() {
