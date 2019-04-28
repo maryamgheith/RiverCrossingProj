@@ -1,5 +1,8 @@
 package GUI;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
+
 import Objects.*;
 import controller.*;
 import javafx.animation.TranslateTransition;
@@ -32,6 +35,12 @@ public class Gui extends Application {
 			GraphicsContext graphics = canvas.getGraphicsContext2D();
 			Image background = new Image(getClass().getResource("background2.jpg").toExternalForm());
 			graphics.drawImage(background, 0, 0);
+			levelOneCrossingStrategy levelOneCrossingStrategy = new levelOneCrossingStrategy();
+			List<ICrosser> right = new ArrayList<ICrosser>();
+			List<ICrosser> left = new ArrayList<ICrosser>();
+			List<ICrosser> boatRiders = new ArrayList<ICrosser>();
+			right = levelOneCrossingStrategy.getInitialCrossers();
+			System.out.println(right.get(0).canSail());
 			ICrosserFactory factory = new ICrosserFactory();
 			ICrosser farmer = factory.getCrosser("Farmer");
 			BufferedImage[] farmerimgs = new BufferedImage[1];
@@ -77,30 +86,42 @@ public class Gui extends Application {
 			imBoat.setY(350);
 			//graphics.drawImage(boatimg, 450, 350);
 			Bounds bounds = canvas.getBoundsInLocal();
-			TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(1));
-			TranslateTransition translateTransition1 = new TranslateTransition(Duration.seconds(1));
+			TranslateTransition translateTransition = new TranslateTransition(Duration.millis(400));
+			TranslateTransition translateTransition1 = new TranslateTransition(Duration.millis(400));
 			imFarmer.setOnMouseClicked(event -> {
 				System.out.println("xxxxxxxx");
 					translateTransition.setNode(imFarmer);
-						translateTransition.setByX(300);
-						translateTransition.setByY(0);
-						translateTransition.play();
-					});
+					imFarmer.setX(imFarmer.getX() + 400);
+					translateTransition.setByY(0);
+					//translateTransition.play();
+				});
 			imBoat.setOnMouseClicked(event -> {
-				if(imBoat.getX()>600)
+				System.out.println(imBoat.getX());
+				if(imBoat.getX()>=460.0)
 				{
 					translateTransition.setNode(imBoat);
-					translateTransition.getToX();
+					translateTransition.setByX(-400);
+					//translateTransition.play();
+					imBoat.setX(imBoat.getX()-400);
+
 				}
 				else {
+
+					System.out.println("xxx");
 					translateTransition.setNode(imBoat);
-					translateTransition1.setNode(imFarmer);
-					translateTransition.setByX(400);
-					translateTransition.setByY(0);
-					translateTransition1.setByX(400);
-					translateTransition.play();
-					translateTransition1.play();
-				}});
+					//translateTransition1.setNode(imFarmer);
+					//translateTransition.play();
+					//translateTransition1.play();
+					//imFarmer.setX(imFarmer.getX()+300);
+					imBoat.setX(imBoat.getX()+400);
+					imFarmer.setX(imFarmer.getX()+400);
+
+
+
+
+				}
+
+			});
 
 				/*imBoat.setFitHeight(200);
 				imBoat.setFitWidth(300);
