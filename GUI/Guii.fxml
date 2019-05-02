@@ -1,31 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.GuiMethods">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1268.0" layoutX="-4.0" layoutY="-9.0" pickOnBounds="true">
          <image>
-            <Image url="@background.jpg" />
+            <Image url="@background2.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="241.0" fitWidth="200.0" layoutX="45.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="215.0" fitWidth="153.0" layoutX="45.0" layoutY="249.0" onMouseClicked="#onclickfarmer" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@farmer.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="138.0" fitWidth="119.0" layoutX="190.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="113.0" fitWidth="119.0" layoutX="153.0" layoutY="419.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@wolf%202.png" />
+            <Image url="@wolf.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="400.0" layoutY="511.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@boat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="133.0" fitWidth="71.0" layoutX="231.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@goat.png" />
          </image>
       </ImageView>
    </children>
